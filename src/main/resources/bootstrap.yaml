@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: springboot-demo-service
+  cloud:
+    kubernetes:
+      config:
+        enabled: true
+        enableApi: true
+        sources:
+          - name: ${spring.application.name}
+      reload:
+        enabled: true
+        mode: polling
+        strategy: refresh
+        monitoring-config-maps: true
+        monitoring-secrets: false

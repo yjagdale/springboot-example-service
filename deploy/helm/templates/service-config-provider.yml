@@ -1,0 +1,9 @@
+---
+# ConfigMap
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  namespace: default
+  name: application-{{ .Values.service.env_name }}.yaml
+data:
+  {{ tpl (.Files.Glob "files/*").AsConfig . | indent 2 }}

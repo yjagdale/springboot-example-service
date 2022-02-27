@@ -1,0 +1,22 @@
+server:
+  servlet:
+    context-path: "{{ .Values.microservices.ingress.path }}"
+  port: "{{ .Values.microservices.service.port }}"
+  max-http-header-size: 10MB
+spring:
+  port: {{ .Values.microservices.service.port }}
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      file-size-threshold: 1KB
+      max-request-size: 6MB
+
+developer:
+  key:
+    value: "This is from configuration"
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
