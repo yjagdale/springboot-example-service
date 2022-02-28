@@ -1,10 +1,13 @@
 server:
   servlet:
-    context-path: "{{ .Values.microservices.ingress.path }}"
-  port: "{{ .Values.microservices.service.port }}"
+    context-path: "{{ .Values.contex_path }}"
+  port: "{{ .Values.port }}"
   max-http-header-size: 10MB
 spring:
-  port: {{ .Values.microservices.service.port }}
+  datasource:
+    url: {{ .Values.database.url }}
+    username: {{ .Values.database.username }}
+    password: {{ .Values.database.password }}
   servlet:
     multipart:
       max-file-size: 5MB

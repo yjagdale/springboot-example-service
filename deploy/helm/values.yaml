@@ -1,0 +1,7 @@
+contex_path: /api/tests
+port: 8080
+
+database:
+  url: defalt-service.foo.bar
+  username: foo
+  password: bar
